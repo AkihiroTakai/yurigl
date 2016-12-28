@@ -1,6 +1,6 @@
 #include <GL/glut.h>
 #include <string>
-#include "yurigl.h"
+#include "yurigl.hxx"
 
 void display(void){
       yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
