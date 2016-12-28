@@ -1,4 +1,4 @@
-#include "yurigl.h"
+#include "yurigl.hxx"
 
 namespace yuri {
       RGBA::RGBA(double r, double g, double b, double a){

@@ -1,6 +1,6 @@
 #include <GL/glut.h>
 #include <cmath>
-#include "yurigl.h"
+#include "yurigl.hxx"
 
 namespace yuri {
       extern YURIGL_MANAGER *YuriGLManager;
