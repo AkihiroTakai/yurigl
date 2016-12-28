@@ -41,10 +41,13 @@ namespace yuri {
                   case GLUT_DOWN:
                         switch(button){
                               case GLUT_LEFT_BUTTON:
+                                    YuriGLManager->CallMouseFunction(YURIGL_LEFT_DOWN, x, y);
                                     break;
                               case GLUT_RIGHT_BUTTON:
+                                    YuriGLManager->CallMouseFunction(YURIGL_RIGHT_DOWN, x, y);
                                     break;
                               case GLUT_MIDDLE_BUTTON:
+                                    YuriGLManager->CallMouseFunction(YURIGL_MIDDLE_DOWN, x, y);
                                     break;
                               default:
                                     break;
@@ -52,10 +55,13 @@ namespace yuri {
                   case GLUT_UP:
                         switch(button){
                               case GLUT_LEFT_BUTTON:
+                                    YuriGLManager->CallMouseFunction(YURIGL_LEFT_UP, x, y);
                                     break;
                               case GLUT_RIGHT_BUTTON:
+                                    YuriGLManager->CallMouseFunction(YURIGL_RIGHT_UP, x, y);
                                     break;
                               case GLUT_MIDDLE_BUTTON:
+                                    YuriGLManager->CallMouseFunction(YURIGL_MIDDLE_UP, x, y);
                                     break;
                               default:
                                     break;
