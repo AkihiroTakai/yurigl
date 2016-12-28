@@ -1,5 +1,6 @@
 #include <GL/glut.h>
 #include <string>
+#include <functional>
 #include "yurigl.hxx"
 
 namespace yuri {
@@ -88,6 +89,12 @@ namespace yuri {
             glutDisplayFunc(func);
       }
 
+      void SetRedrawFunction(std::function<void(void)> func){
+            /*
+            *関数ポインタを渡す
+            */
+            glutDisplayFunc(func.target<void(void)>());
+      }
       /*
       *MainLoop関数
       *ループ状態に入る関数
