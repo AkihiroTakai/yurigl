@@ -17,6 +17,7 @@ namespace yuri {
             width = DEFAULT_WINDOW_WIDTH;
             height = DEFAULT_WINDOW_HEIGHT;
             WindowName = "YuriGL";
+            EventHandlerFlags = 0xffffffff;
 
             for(c = 0;c < 6;c++)
                   MouseActionHandlers[c] = DoNothing;
@@ -45,7 +46,7 @@ namespace yuri {
       void YURIGL_MANAGER::SetMouseActionHandler(int index, void (*function)(int x, int y)){
             MouseActionHandlers[index] = function;
       }
-      
+
       void YURIGL_MANAGER::CallMouseFunction(int index, int x, int y){
             MouseActionHandlers[index](x, y);
       }

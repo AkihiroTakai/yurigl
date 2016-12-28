@@ -12,6 +12,7 @@ namespace yuri {
             double height;
             Point2DD DisplayPosition;
             std::string WindowName;
+            int EventHandlerFlags;
             void (*MouseActionHandlers[6])(int x, int y);
       public:
             YURIGL_MANAGER();
@@ -52,6 +53,7 @@ namespace yuri {
       double ComputeNDCSD(double value, double limit);
       void SetDownLeftFunction(void (*function)(int x, int y));
       void SetKeyboardFunction(void (*function)(unsigned char key, int x, int y));
+      void ConfigKeyboardRealTime(bool flag);
 }
 
 #endif

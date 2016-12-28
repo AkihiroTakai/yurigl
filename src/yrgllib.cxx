@@ -149,4 +149,11 @@ namespace yuri {
             */
             glClear(GL_COLOR_BUFFER_BIT);
       }
+
+      /*
+      *強制的に再描画(redraw関数呼び出し)を行う関数
+      */
+      void ForceRedraw(){
+            glutPostRedisplay();
+      }
 }
