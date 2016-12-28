@@ -1,7 +1,7 @@
-#ifndef POINT_H
-#define POINT_H
+#ifndef POINT_HXX
+#define POINT_HXX
 
-#include "yurigl.h"
+#include "yurigl.hxx"
 
 namespace yuri {
 

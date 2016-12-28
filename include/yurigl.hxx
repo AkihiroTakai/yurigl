@@ -1,9 +1,9 @@
-#ifndef YR3D_H
-#define YR3D_H
+#ifndef YURIGL_HXX
+#define YURIGL_HXX
 
 #include <string>
-#include "value.h"
-#include "point.h"
+#include "value.hxx"
+#include "point.hxx"
 
 namespace yuri {
 
