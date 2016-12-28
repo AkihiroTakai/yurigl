@@ -4,33 +4,33 @@
 #include "yurigl.h"
 
 namespace yuri {
-      template <typename Type>
-      class Point2D {
-            Type x;
-            Type y;
+
+      class Point2DD {
+            double x;
+            double y;
             public:
-            Point2D(Type x, Type y){
+            Point2DD(double x, double y){
                   this->x = x;
                   this->y = y;
             }
-            Type getX(){
+            double getX(){
                   return x;
             }
-            Type getY(){
+            double getY(){
                   return y;
             }
-            void setX(Type x){
+            void setX(double x){
                   this->x = x;
             }
-            void setY(Type y){
+            void setY(double y){
                   this->y = y;
             }
 
-            Type ComputeNDCSX(double width){
+            double ComputeNDCSX(double width){
                   return ((this->x * 2) / width) - 1.0;
             }
 
-            Type ComputeNDCSY(double height){
+            double ComputeNDCSY(double height){
                   return -(((this->y * 2) / height) - 1.0);
             }
       };

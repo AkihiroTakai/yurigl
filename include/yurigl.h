@@ -10,7 +10,7 @@ namespace yuri {
       class YURIGL_MANAGER {
             double width;
             double height;
-            Point2D<int> DisplayPosition;
+            Point2DD DisplayPosition;
             std::string WindowName;
       public:
             YURIGL_MANAGER();
@@ -40,12 +40,13 @@ namespace yuri {
       void SetRedrawFunction(void (*func)(void));
       void MainLoop();
       void CreateWindow(std::string name);
-      void HitDot(Point2D<double> point, RGBA color);
-      void DrawLine(Point2D<double> start, Point2D<double> end, RGBA color);
-      void DrawTriangle(Point2D<double> p1, Point2D<double> p2, Point2D<double> p3, RGBA color);
-      void DrawRect(Point2D<double> p1, Point2D<double> p2, Point2D<double> p3, Point2D<double> p4, RGBA color);
+      void HitDot(Point2DD point, RGBA color);
+      void DrawLine(Point2DD start, Point2DD end, RGBA color);
+      void DrawTriangle(Point2DD p1, Point2DD p2, Point2DD p3, RGBA color);
+      void DrawRect(Point2DD p1, Point2DD p2, Point2DD p3, Point2DD p4, RGBA color);
       void FillBackGround(RGBA color);
-      
+      void DrawCircle(Point2DD center, double r, RGBA color);
+      double ComputeNDCSD(double value, double limit);
 }
 
 #endif
