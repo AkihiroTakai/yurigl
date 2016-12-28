@@ -35,7 +35,9 @@ namespace yuri {
             YuriGLManager->SetMouseActionHandler(YURIGL_MIDDLE_UP, function);
       }
 
-      
+      /*
+      *マウスのイベントが発生したときに実行される関数
+      */
       void MouseFunction(int button, int state, int x, int y){
             switch(state){
                   case GLUT_DOWN:

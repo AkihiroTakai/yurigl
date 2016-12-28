@@ -51,6 +51,7 @@ namespace yuri {
       void DrawCircle(Point2DD center, double r, RGBA color);
       double ComputeNDCSD(double value, double limit);
       void SetDownLeftFunction(void (*function)(int x, int y));
+      void SetKeyboardFunction(void (*function)(unsigned char key, int x, int y));
 }
 
 #endif
