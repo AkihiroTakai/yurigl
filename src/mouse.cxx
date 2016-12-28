@@ -1,8 +1,12 @@
 #include <GL/glut.h>
+#include "yurigl.hxx"
 
 namespace yuri {
-      void SetDownLeftFunction(void (*func)(int x, int y)){
 
+      extern YURIGL_MANAGER *YuriGLManager;
+
+      void SetDownLeftFunction(void (*function)(int x, int y)){
+            YuriGLManager->SetMouseActionHandler(YURIGL_LEFT_DOWN, function);
       }
 
       

@@ -41,6 +41,10 @@ namespace yuri {
       double YURIGL_MANAGER::NDeviceCSY(double height){
             return height / this->height;
       }
+      
+      void YURIGL_MANAGER::SetMouseActionHandler(int index, void (*function)(int x, int y)){
+            MouseActionHandlers[index] = function;
+      }
 
       void DoNothing(int x, int y){}
 
