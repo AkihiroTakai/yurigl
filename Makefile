@@ -2,7 +2,7 @@ BIN = ./bin
 DST = ./dst
 SRC = ./src
 INCLUDE = /home/annet/program/yurigl/include
-OBJS = $(DST)/yrgllib.o $(DST)/draw.o $(DST)/color.o $(DST)/yrgl_manager.o
+OBJS = $(DST)/yrgllib.o $(DST)/draw.o $(DST)/color.o $(DST)/yrgl_manager.o $(DST)/mouse.o
 
 CC = g++
 CFLAGS = -O2 -L/usr/X11R6/lib -lglut -lGLU -lGL -lXi -lXext -lX11 -lm -lpthread

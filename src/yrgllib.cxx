@@ -5,6 +5,7 @@
 namespace yuri {
 
       void DefaultResize(int width, int height);
+      void MouseFunction(int button, int state, int x, int y);
 
       /*
       *YuriGL管理クラス
@@ -97,6 +98,12 @@ namespace yuri {
             *画面サイズ変更時のハンドラをセット
             */
             glutReshapeFunc(DefaultResize);
+
+            /*
+            *マウスのイベントハンドラをセット
+            */
+            glutMouseFunc(MouseFunction);
+
             /*
             *ループ
             */
