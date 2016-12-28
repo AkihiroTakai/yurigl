@@ -54,6 +54,7 @@ namespace yuri {
       void SetDownLeftFunction(void (*function)(int x, int y));
       void SetKeyboardFunction(void (*function)(unsigned char key, int x, int y));
       void ConfigKeyboardRealTime(bool flag);
+      void SetMouseDraggedFunction(void (*function)(int x, int y));
 }
 
 #endif

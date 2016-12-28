@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
       yuri::SetRedrawFunction(display);
       yuri::SetDownLeftFunction(mouse);
       yuri::SetKeyboardFunction(key);
-      glutMotionFunc(mouse);
+      yuri::SetMouseDraggedFunction(mouse);
       yuri::MainLoop();
       return 0;
 }

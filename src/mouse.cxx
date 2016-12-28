@@ -70,4 +70,11 @@ namespace yuri {
                         }
             }
       }
+
+      /*
+      *マウスがドラッグされたときに実行される関数
+      */
+      void SetMouseDraggedFunction(void (*function)(int x, int y)){
+            glutMotionFunc(function);
+      }
 }
