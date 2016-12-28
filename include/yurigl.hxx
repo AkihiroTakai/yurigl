@@ -50,6 +50,7 @@ namespace yuri {
       void FillBackGround(RGBA color);
       void DrawCircle(Point2DD center, double r, RGBA color);
       double ComputeNDCSD(double value, double limit);
+      void SetDownLeftFunction(void (*function)(int x, int y));
 }
 
 #endif
