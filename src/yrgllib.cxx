@@ -74,7 +74,6 @@ namespace yuri {
             */
             glutSetWindowTitle(name.c_str());
       }
-
       /*
       *SetRedrawFunction関数
       *画面に再描画指示が来たときに実行する関数を設定する関数
