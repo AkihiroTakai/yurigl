@@ -1,15 +1,25 @@
 #include "yurigl.hxx"
 
 namespace yuri {
+
+      /*
+      *何もしない関数
+      */
+      void DoNothing(int x, int y);
+
       /*
       *コンストラクタ
       */
       YURIGL_MANAGER::YURIGL_MANAGER()
       : DisplayPosition(DEFAULT_DISPLAY_X, DEFAULT_DISPLAY_Y)
       {
+            char c;
             width = DEFAULT_WINDOW_WIDTH;
             height = DEFAULT_WINDOW_HEIGHT;
             WindowName = "YuriGL";
+
+            for(c = 0;c < 6;c++)
+                  MouseActionHandlers[c] = DoNothing;
       }
 
       double YURIGL_MANAGER::getWidth(){
@@ -31,5 +41,7 @@ namespace yuri {
       double YURIGL_MANAGER::NDeviceCSY(double height){
             return height / this->height;
       }
+
+      void DoNothing(int x, int y){}
 
 }

@@ -12,6 +12,7 @@ namespace yuri {
             double height;
             Point2DD DisplayPosition;
             std::string WindowName;
+            void (*MouseActionHandlers[6])(int x, int y);
       public:
             YURIGL_MANAGER();
             std::string getWindowName();
