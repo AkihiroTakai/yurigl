@@ -5,8 +5,34 @@ namespace yuri {
 
       extern YURIGL_MANAGER *YuriGLManager;
 
+      /*
+      *Down系
+      */
       void SetDownLeftFunction(void (*function)(int x, int y)){
             YuriGLManager->SetMouseActionHandler(YURIGL_LEFT_DOWN, function);
+      }
+
+      void SetDownRightFunction(void (*function)(int x, int y)){
+            YuriGLManager->SetMouseActionHandler(YURIGL_RIGHT_DOWN, function);
+      }
+
+      void SetDownMiddleFunction(void (*function)(int x, int y)){
+            YuriGLManager->SetMouseActionHandler(YURIGL_MIDDLE_DOWN, function);
+      }
+
+      /*
+      *Up系
+      */
+      void SetUpLeftFunction(void (*function)(int x, int y)){
+            YuriGLManager->SetMouseActionHandler(YURIGL_LEFT_UP, function);
+      }
+
+      void SetUpRightFunction(void (*function)(int x, int y)){
+            YuriGLManager->SetMouseActionHandler(YURIGL_RIGHT_UP, function);
+      }
+
+      void SetUpMiddleFunction(void (*function)(int x, int y)){
+            YuriGLManager->SetMouseActionHandler(YURIGL_MIDDLE_UP, function);
       }
 
       
