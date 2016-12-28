@@ -8,7 +8,8 @@ void display(void){
 }
 
 void mouse(int x, int y){
-      std::cout << "YURIGL" << std::endl;
+      yuri::FillBackGround(yuri::RGBA(255, 255, 255, 0));
+      yuri::DrawLine(yuri::Point2DD(0, 0), yuri::Point2DD(x, y), yuri::RGBA(0, 0 ,0, 0));
 }
 
 void key(unsigned char key, int x, int y){
@@ -25,6 +26,7 @@ int main(int argc, char *argv[]){
       yuri::SetRedrawFunction(display);
       yuri::SetDownLeftFunction(mouse);
       yuri::SetKeyboardFunction(key);
+      glutMotionFunc(mouse);
       yuri::MainLoop();
       return 0;
 }
