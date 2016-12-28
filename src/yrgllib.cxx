@@ -4,7 +4,7 @@
 
 namespace yuri {
 
-      void resize(int width, int height);
+      void DefaultResize(int width, int height);
 
       YURIGL_MANAGER *YuriGLManager;
 
@@ -30,14 +30,14 @@ namespace yuri {
 
       void SetRedrawFunction(void (*func)(void)){
             glutDisplayFunc(func);
-            glutReshapeFunc(resize);
+            glutReshapeFunc(DefaultResize);
       }
 
       void MainLoop(){
             glutMainLoop();
       }
 
-      void resize(int width, int height){
+      void DefaultResize(int width, int height){
             
             glViewport(0, 0, width, height);
 
@@ -45,5 +45,10 @@ namespace yuri {
 
             glOrtho(-YuriGLManager->NDeviceCSX(width), YuriGLManager->NDeviceCSX(width),
              -YuriGLManager->NDeviceCSY(height), YuriGLManager->NDeviceCSY(height), -1.0, 1.0);
+      }
+
+      void FillBackGround(RGBA color){
+            glClearColor(color.getNDRED(), color.getNDGREEN(), color.getNDBLUE(), color.getNDALPHA());
+            glClear(GL_COLOR_BUFFER_BIT);
       }
 }

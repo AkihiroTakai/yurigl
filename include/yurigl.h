@@ -44,7 +44,8 @@ namespace yuri {
       void DrawLine(Point2D<double> start, Point2D<double> end, RGBA color);
       void DrawTriangle(Point2D<double> p1, Point2D<double> p2, Point2D<double> p3, RGBA color);
       void DrawRect(Point2D<double> p1, Point2D<double> p2, Point2D<double> p3, Point2D<double> p4, RGBA color);
-
+      void FillBackGround(RGBA color);
+      
 }
 
 #endif
