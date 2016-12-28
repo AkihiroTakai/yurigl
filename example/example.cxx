@@ -4,19 +4,34 @@
 
 void display(void){
       yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
-      yuri::DrawCircle(yuri::Point2DD(200, 200), 100, yuri::RGBA(255, 255, 255, 255));
 }
 
 void mouse(int x, int y){
+      yuri::ForceRedraw();
       yuri::FillBackGround(yuri::RGBA(255, 255, 255, 0));
       yuri::DrawLine(yuri::Point2DD(0, 0), yuri::Point2DD(x, y), yuri::RGBA(0, 0 ,0, 0));
 }
 
 void key(unsigned char key, int x, int y){
-      static int i;
-      yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
-      yuri::DrawRect(yuri::Point2DD(i, 0), yuri::Point2DD(i+50, 0), yuri::Point2DD(i+50, 50), yuri::Point2DD(i, 50), yuri::RGBA(255, 255, 255, 255));
-      i++;
+      static int xx, yy;
+      if(key == 's'){
+            yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
+            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
+            yy+=5;
+      }else if(key == 'w'){
+            yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
+            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
+            yy-=5;
+      }else if(key == 'd'){
+            yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
+            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
+            xx+=5;
+      }else if(key == 'a'){
+            yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
+            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
+            xx-=5;
+      }
+      gluLookAt(3.0, 4.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
 int main(int argc, char *argv[]){

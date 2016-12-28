@@ -14,6 +14,7 @@ namespace yuri {
             std::string WindowName;
             int EventHandlerFlags;
             void (*MouseActionHandlers[6])(int x, int y);
+            bool KeyTable[128];
       public:
             YURIGL_MANAGER();
             std::string getWindowName();
@@ -55,6 +56,7 @@ namespace yuri {
       void SetKeyboardFunction(void (*function)(unsigned char key, int x, int y));
       void ConfigKeyboardRealTime(bool flag);
       void SetMouseDraggedFunction(void (*function)(int x, int y));
+      void ForceRedraw();
 }
 
 #endif
