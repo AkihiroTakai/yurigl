@@ -11,7 +11,7 @@ void mouse(int x, int y){
       yuri::DrawLine(yuri::Point2DD(0, 0), yuri::Point2DD(x, y), yuri::RGBA(0, 0 ,0, 0));
 }
 
-void timer(int value) {
+void timer(int value){
 
       static int xx, yy;
 
