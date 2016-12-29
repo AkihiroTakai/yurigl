@@ -54,6 +54,10 @@ namespace yuri {
             MouseActionHandlers[index](x, y);
       }
 
+      void YURIGL_MANAGER::SetKeyTable(char index, bool value){
+            KeyTable[index] = value;
+      }
+
       void DoNothing(int x, int y){}
 
 }

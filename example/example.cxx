@@ -8,7 +8,6 @@ void display(void){
 
 void mouse(int x, int y){
       yuri::ForceRedraw();
-      yuri::FillBackGround(yuri::RGBA(255, 255, 255, 0));
       yuri::DrawLine(yuri::Point2DD(0, 0), yuri::Point2DD(x, y), yuri::RGBA(0, 0 ,0, 0));
 }
 
@@ -31,7 +30,6 @@ void key(unsigned char key, int x, int y){
             yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
             xx-=5;
       }
-      gluLookAt(3.0, 4.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
 int main(int argc, char *argv[]){

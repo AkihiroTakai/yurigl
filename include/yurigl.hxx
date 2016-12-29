@@ -24,6 +24,7 @@ namespace yuri {
             double NDeviceCSY(double height);
             void SetMouseActionHandler(int index, void (*function)(int x, int y));
             void CallMouseFunction(int index, int x, int y);
+            void SetKeyTable(char index, bool value);
       };
 
       class RGBA {
