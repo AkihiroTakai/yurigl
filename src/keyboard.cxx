@@ -3,6 +3,7 @@
 
 namespace yuri {
       extern YURIGL_MANAGER *YuriGLManager;
+      
       /*
       *SetKeyboardFunction関数
       *キーボードイベントが来たときに実行される関数を設定する関数

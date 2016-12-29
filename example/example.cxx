@@ -2,6 +2,8 @@
 #include <iostream>
 #include "yurigl.hxx"
 
+#define ME_SIZE 10
+
 void display(void){
       yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
 }
@@ -13,24 +15,24 @@ void mouse(int x, int y){
 
 void timer(int value){
 
-      static int xx, yy;
+      static int x, y;
 
-      if(yuri::KeyPushed('s')){
+      if(yuri::KeyPushed('s') && y < 500){
             yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
-            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
-            yy+=5;
-      }else if(yuri::KeyPushed('w')){
+            yuri::DrawRect(yuri::Point2DD(x, y), yuri::Point2DD(x+ME_SIZE, y), yuri::Point2DD(x+ME_SIZE, y+ME_SIZE), yuri::Point2DD(x, y+ME_SIZE), yuri::RGBA(255, 255, 255, 255));
+            y+=5;
+      }else if(yuri::KeyPushed('w') && y > 0){
             yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
-            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
-            yy-=5;
-      }else if(yuri::KeyPushed('d')){
+            yuri::DrawRect(yuri::Point2DD(x, y), yuri::Point2DD(x+ME_SIZE, y), yuri::Point2DD(x+ME_SIZE, y+ME_SIZE), yuri::Point2DD(x, y+ME_SIZE), yuri::RGBA(255, 255, 255, 255));
+            y-=5;
+      }else if(yuri::KeyPushed('d') && x < 500){
             yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
-            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
-            xx+=5;
-      }else if(yuri::KeyPushed('a')){
+            yuri::DrawRect(yuri::Point2DD(x, y), yuri::Point2DD(x+ME_SIZE, y), yuri::Point2DD(x+ME_SIZE, y+ME_SIZE), yuri::Point2DD(x, y+ME_SIZE), yuri::RGBA(255, 255, 255, 255));
+            x+=5;
+      }else if(yuri::KeyPushed('a') && x > 0){
             yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
-            yuri::DrawRect(yuri::Point2DD(xx, yy), yuri::Point2DD(xx+50, yy), yuri::Point2DD(xx+50, yy+50), yuri::Point2DD(xx, yy+50), yuri::RGBA(255, 255, 255, 255));
-            xx-=5;
+            yuri::DrawRect(yuri::Point2DD(x, y), yuri::Point2DD(x+ME_SIZE, y), yuri::Point2DD(x+ME_SIZE, y+ME_SIZE), yuri::Point2DD(x, y+ME_SIZE), yuri::RGBA(255, 255, 255, 255));
+            x-=5;
       }
 
 	yuri::ForceRedraw();
@@ -47,5 +49,6 @@ int main(int argc, char *argv[]){
       yuri::SetMouseDraggedFunction(mouse);
       yuri::SetTimerFunction(timer, yuri::FPS2MS(60), 1);
       yuri::MainLoop();
+
       return 0;
 }

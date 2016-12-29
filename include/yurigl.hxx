@@ -26,6 +26,8 @@ namespace yuri {
             void CallMouseFunction(int index, int x, int y);
             void SetKeyTable(char index, bool value);
             bool GetKeyTable(char index);
+            void ConfigEventFlag(int AddFlag);
+            bool CheckEventFlagConfigure(int CheckFlag);
       };
 
       class RGBA {

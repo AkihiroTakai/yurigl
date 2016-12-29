@@ -4,7 +4,7 @@
 
 namespace yuri {
 
-      void DefaultResize(int width, int height);
+      void DefaultResizeFunction(int width, int height);
       void DefaultKeyboardDownFunction(unsigned char key, int x, int y);
       void MouseFunction(int button, int state, int x, int y);
       void DefaultKeyboardUpFunction(unsigned char key, int x, int y);
@@ -88,6 +88,10 @@ namespace yuri {
             *関数ポインタを渡す
             */
             glutDisplayFunc(func);
+            /*
+            *フラグを立てる
+            */
+            YuriGLManager->ConfigEventFlag(REDRAW_HFUNCTION_FLAG);
       }
       
       /*
@@ -99,7 +103,8 @@ namespace yuri {
             /*
             *画面サイズ変更時のハンドラをセット
             */
-            glutReshapeFunc(DefaultResize);
+            if(YuriGLManager->CheckEventFlagConfigure(REDRAW_HFUNCTION_FLAG))
+                  glutReshapeFunc(DefaultResizeFunction);
 
             /*
             *マウスのイベントハンドラをセット
@@ -122,7 +127,7 @@ namespace yuri {
       *DefaultResize関数
       *デフォルトのりサイズハンドラ
       */
-      void DefaultResize(int width, int height){
+      void DefaultResizeFunction(int width, int height){
             /*
             *ビューポートは全域に設定
             */

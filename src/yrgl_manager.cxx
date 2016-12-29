@@ -1,7 +1,7 @@
 #include "yurigl.hxx"
 
 namespace yuri {
-
+      
       /*
       *何もしない関数
       */
@@ -60,6 +60,14 @@ namespace yuri {
 
       bool YURIGL_MANAGER::GetKeyTable(char index){
             return KeyTable[index];
+      }
+
+      void YURIGL_MANAGER::ConfigEventFlag(int AddFlag){
+            EventHandlerFlags |= AddFlag;
+      }
+
+      bool YURIGL_MANAGER::CheckEventFlagConfigure(int CheckFlag){
+            return EventHandlerFlags & CheckFlag;
       }
 
       void DoNothing(int x, int y){}
