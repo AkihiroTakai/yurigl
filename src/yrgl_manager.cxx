@@ -58,6 +58,10 @@ namespace yuri {
             KeyTable[index] = value;
       }
 
+      bool YURIGL_MANAGER::GetKeyTable(char index){
+            return KeyTable[index];
+      }
+
       void DoNothing(int x, int y){}
 
 }

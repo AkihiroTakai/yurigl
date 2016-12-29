@@ -25,6 +25,7 @@ namespace yuri {
             void SetMouseActionHandler(int index, void (*function)(int x, int y));
             void CallMouseFunction(int index, int x, int y);
             void SetKeyTable(char index, bool value);
+            bool GetKeyTable(char index);
       };
 
       class RGBA {
@@ -58,6 +59,7 @@ namespace yuri {
       void ConfigKeyboardRealTime(bool flag);
       void SetMouseDraggedFunction(void (*function)(int x, int y));
       void ForceRedraw();
+      bool KeyPushed(char key);
 }
 
 #endif

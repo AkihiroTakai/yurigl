@@ -36,4 +36,11 @@ namespace yuri {
             YuriGLManager->SetKeyTable(key, false);
       }
 
+      /*
+      *このキーは押されてますか？と聞く関数
+      */
+      bool KeyPushed(char key){
+            return YuriGLManager->GetKeyTable(key);
+      }
+
 }

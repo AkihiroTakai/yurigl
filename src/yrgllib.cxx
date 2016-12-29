@@ -5,7 +5,9 @@
 namespace yuri {
 
       void DefaultResize(int width, int height);
+      void DefaultKeyboardDownFunction(unsigned char key, int x, int y);
       void MouseFunction(int button, int state, int x, int y);
+      void DefaultKeyboardUpFunction(unsigned char key, int x, int y);
 
       /*
       *YuriGL管理クラス
@@ -103,6 +105,12 @@ namespace yuri {
             *マウスのイベントハンドラをセット
             */
             glutMouseFunc(MouseFunction);
+
+            /*
+            *キーボードのデフォルトイベントハンドラを登録
+            */
+            glutKeyboardFunc(DefaultKeyboardDownFunction);
+            glutKeyboardUpFunc(DefaultKeyboardUpFunction);
 
             /*
             *ループ
