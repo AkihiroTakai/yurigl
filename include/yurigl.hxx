@@ -60,6 +60,8 @@ namespace yuri {
       void SetMouseDraggedFunction(void (*function)(int x, int y));
       void ForceRedraw();
       bool KeyPushed(char key);
+      void SetTimerFunction(void (*function)(int), int msec, int timerID);
+      double FPS2MS(double fps);
 }
 
 #endif

@@ -34,7 +34,7 @@ void timer(int value){
       }
 
 	yuri::ForceRedraw();
-	glutTimerFunc(50 , timer , 0);
+	yuri::SetTimerFunction(timer, yuri::FPS2MS(60), 1);
 }
 
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]){
       yuri::SetRedrawFunction(display);
       yuri::SetDownLeftFunction(mouse);
       yuri::SetMouseDraggedFunction(mouse);
-      glutTimerFunc(100 , timer , 0);
+      yuri::SetTimerFunction(timer, yuri::FPS2MS(60), 1);
       yuri::MainLoop();
       return 0;
 }

@@ -21,4 +21,11 @@ namespace yuri {
             glutTimerFunc(msec, function, timerID);
       }
 
+      /*
+      *fpsからミリ秒を計算するinline関数
+      */
+      double FPS2MS(double fps){
+            return 1000.0 / fps;
+      }
+
 }
