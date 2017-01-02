@@ -6,6 +6,7 @@
 
 void display(void){
       yuri::FillBackGround(yuri::RGBA(0, 0, 0, 0));
+      glutSolidCube(2);
 }
 
 void mouse(int x, int y){

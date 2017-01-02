@@ -1,7 +1,7 @@
 BIN = ./bin
 DST = ./dst
 SRC = ./src
-INCLUDE = /home/annet/program/yurigl/include
+INCLUDE = /home/Anne/program/yurigl/include
 OBJS = $(DST)/yrgllib.o $(DST)/draw.o $(DST)/color.o $(DST)/yrgl_manager.o $(DST)/mouse.o $(DST)/keyboard.o \
 	$(DST)/yrgl_config.o $(DST)/timer.o
 
@@ -22,6 +22,7 @@ all:
       
 example: $(BIN)/libyurigl.a
 	$(CC) $(CFLAGS) -I$(INCLUDE) ./example/example.cxx $(BIN)/libyurigl.a -o $(BIN)/example
+	$(CC) $(CFLAGS) -I$(INCLUDE) ./example/example2.cxx `pkg-config --cflags opencv` `pkg-config --libs opencv` $(BIN)/libyurigl.a -o $(BIN)/example2
 
 clean:
 	rm -f $(BIN)/*
