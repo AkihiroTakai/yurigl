@@ -3,10 +3,10 @@ DST = ./dst
 SRC = ./src
 INCLUDE = /home/Anne/program/yurigl/include
 OBJS = $(DST)/yrgllib.o $(DST)/draw.o $(DST)/color.o $(DST)/yrgl_manager.o $(DST)/mouse.o $(DST)/keyboard.o \
-	$(DST)/yrgl_config.o $(DST)/timer.o
+	$(DST)/yrgl_config.o $(DST)/timer.o $(DST)/drawmat.o
 
 CC = g++
-CFLAGS = -O2 -L/usr/X11R6/lib -lglut -lGLU -lGL -lXi -lXext -lX11 -lm -lpthread
+CFLAGS = -O2 -L/usr/X11R6/lib -lglut -lGLU -lGL -lXi -lXext -lX11 -lm -lpthread `pkg-config --cflags opencv` `pkg-config --libs opencv`
 export CC
 export CFLAGS
 

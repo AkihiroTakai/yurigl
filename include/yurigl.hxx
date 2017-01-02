@@ -2,6 +2,7 @@
 #define YURIGL_HXX
 
 #include <string>
+#include <opencv2/opencv.hpp>
 #include "value.hxx"
 #include "point.hxx"
 
@@ -64,6 +65,7 @@ namespace yuri {
       bool KeyPushed(char key);
       void SetTimerFunction(void (*function)(int), int msec, int timerID);
       double FPS2MS(double fps);
+      void DrawCvMat(cv::Mat *img);
 }
 
 #endif
